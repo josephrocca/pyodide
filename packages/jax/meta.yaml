@@ -1,0 +1,24 @@
+package:
+  name: jax
+  version: 0.3.13
+source:
+  # path: /src/jax
+  url: https://github.com/google/jax/archive/refs/tags/jax-v0.3.13.tar.gz
+  sha256: d7ea74f8fd4ee69698f7350078f7987fe66333a0ac84b057dc792aa72b5f1813
+
+build:
+  script: |
+    # install requirements:
+    sudo apt-get update
+    sudo apt-get install -y python3-dev
+    pip install numpy wheel
+    # python build/build.py
+
+test:
+  imports:
+    - jax
+about:
+  home: https://github.com/google/jax
+  PyPI: https://pypi.org/project/jax
+  summary: Differentiate, compile, and transform Numpy code.
+  license: Apache-2.0
