@@ -95,6 +95,8 @@ def _build_in_isolated_env(
             installed_requires_for_build = True
 
         with replace_env(build_env):
+            import subprocess
+            subprocess.call([sys.executable, "build/build.py"], env=build_env)
             if not installed_requires_for_build:
                 install_reqs(env, builder.get_requires_for_build(distribution))
             return builder.build(distribution, outdir, {})
