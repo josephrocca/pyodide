@@ -115,6 +115,9 @@ substitutions:
 
 - {{ Enhancement }} Pyodide now builds with `-sWASM_BIGINT`..
   {pr}`2643`
+  
+- {{ Enhancement }} `meta.yaml` now supports `build.cross-script` which is analogous to `build.script` except that it will run with the target environment variables and sysconfigdata and with the pywasmcross compiler symlinks.
+  {pr}`2734`
 
 ### REPL
 
